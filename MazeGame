@@ -1,0 +1,292 @@
+player = 2
+goldkey = False
+redkey = False
+print("""You are trapped in a 4x4 maze, on the botton room, second to the left. 
+Enter north, south, east or west to go that direction.
+Enter map to show a 'map' """)
+while player != 17:
+    if player == 1 and goldkey != True:
+        print("Theres something shiny on the groud")
+        choice = input("Pick it up? y/n: ")
+        if choice == "y":
+            print("You got a gold key.")
+            goldkey = True
+        else:
+            print("Okay, it stays there, then.")
+    if player == 11 and redkey != True:
+        print("Theres something shiny on the groud")
+        choice = input("Pick it up? y/n: ")
+        if choice == "y":
+            print("You got a red key.")
+            redkey = True
+        else:
+            print("Okay, it stays there, then.")
+    elif player == 4:
+        print("There's a small piece of paper on the ground.")
+        choice = input("Pick it up? y/n: ")
+        if choice == "y":
+            print("The number 11 and 1 is written on it.")
+        else:
+            print("Okay, it stays there, then.")
+
+    direction = input("Where will you go?: ")
+    if direction == "map":
+        print("""
+    16  15  14  13
+    9   10  11  12
+    8   7   6   5
+    1   2   3   4""")
+        print("You are in room", player)
+        continue
+    if player == 1:
+        if direction == "north":
+            print("You go north.")
+            player = 8
+        elif direction == "south":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        elif direction == "east":
+            print("There is a wall stopping you. Sounds like theres a room behind it.")
+        elif direction == "west":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        else:
+            print("Choose a direction.")
+
+    elif player == 2:
+        if direction == "north":
+            print("You go north.")
+            player = 7
+        elif direction == "south":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        elif direction == "east":
+            print("You go east.")
+            player = 3
+        elif direction == "west":
+            print("There is a wall stopping you. Sounds like theres a room behind it.")
+        else:
+            print("Choose a direction.")
+            continue
+
+    elif player == 3:
+        if direction == "north":
+            print("You go north.")
+            player = 6
+        elif direction == "south":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        elif direction == "east":
+            print("You go east.")
+            player = 4
+        elif direction == "west":
+            print("You go West.")
+            player = 2
+        else:
+            print("Choose a direction.")
+
+    elif player == 4:
+        if direction == "north":
+            print("You go north.")
+            player = 5
+        elif direction == "south":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        elif direction == "east":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        elif direction == "west":
+            print("You go west.")
+            player = 3
+        else:
+            print("Choose a direction.")
+
+    elif player == 5:
+        if direction == "north":
+            print("You go north.")
+            player = 12
+        elif direction == "south":
+            print("You go south.")
+            player = 4
+        elif direction == "east":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        elif direction == "west":
+            print("You go West.")
+            player = 6
+        else:
+            print("Choose a direction.")
+
+    elif player == 6:
+        if direction == "north":
+            print("You go north.")
+            player = 11
+        elif direction == "south":
+            print("You go south.")
+            player = 3
+        elif direction == "east":
+            print("You go east.")
+            player = 5
+        elif direction == "west":
+            print("You go west.")
+            player = 7
+        else:
+            print("Choose a direction.")
+
+    elif player == 7:
+        if direction == "north":
+            print("You go north.")
+            player = 10
+        elif direction == "south":
+            print("You go south.")
+            player = 2
+        elif direction == "east":
+            print("You go east.")
+            player = 6
+        elif direction == "west":
+            if not redkey:
+                print("A red door is blocking the way. You need a Red key.")
+            if redkey:
+                print("A red door is blocking the way. You need a Red key.")
+                choice = input("Use Red Key? y/n: ")
+                if choice == "y":
+                    print("Red door opened. You go west.")
+                    player = 8
+                else:
+                    print("The red door remains closed.")
+        else:
+            print("Choose a direction.")
+
+    elif player == 8:
+        if direction == "north":
+            print("There is a wall stopping you. Sounds like theres a room behind it.")
+        elif direction == "south":
+            print("You go south.")
+            player = 1
+        elif direction == "east":
+            print("You go east.")
+            player = 7
+        elif direction == "west":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        else:
+            print("Choose a direction.")
+
+    elif player == 9:
+        if direction == "north":
+            print("You go north.")
+            player = 16
+        elif direction == "south":
+            print("There is a wall stopping you. Sounds like theres a room behind it.")
+        elif direction == "east":
+            print("You go east.")
+            player = 10
+        elif direction == "west":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        else:
+            print("Choose a direction.")
+
+    elif player == 10:
+        if direction == "north":
+            print("There is a wall stopping you. Sounds like theres a room behind it.")
+        elif direction == "south":
+            print("You go south.")
+            player = 7
+        elif direction == "east":
+            print("You go east.")
+            player = 11
+        elif direction == "west":
+            print("You go west.")
+            player = 9
+        else:
+            print("Choose a direction.")
+
+    elif player == 11:
+        if direction == "north":
+            print("You go north.")
+            player = 14
+        elif direction == "south":
+            print("You go south.")
+            player = 6
+        elif direction == "east":
+            print("You go east.")
+            player = 12
+        elif direction == "west":
+            print("You go west.")
+            player = 10
+        else:
+            print("Choose a direction.")
+
+    elif player == 12:
+        if direction == "north":
+            print("You go north.")
+            player = 13
+        elif direction == "south":
+            print("You go south.")
+            player = 5
+        elif direction == "east":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        elif direction == "west":
+            print("You go west.")
+            player = 11
+        else:
+            print("Choose a direction.")
+
+    elif player == 13:
+        if direction == "north":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        elif direction == "south":
+            print("You go south.")
+            player = 12
+        elif direction == "east":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        elif direction == "west":
+            print("You go west.")
+            player = 14
+        else:
+            print("Choose a direction.")
+
+    elif player == 14:
+        if direction == "north":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        elif direction == "south":
+            print("You go south.")
+            player = 11
+        elif direction == "east":
+            print("You go east.")
+            player = 13
+        elif direction == "west":
+            print("You go west.")
+            player = 15
+        else:
+            print("Choose a direction.")
+
+    elif player == 15:
+        if direction == "north":
+            print("A big gate is blocking the way. It has a golden lock.")
+            if goldkey:
+                choice = input("Use Gold Key? y/n: ")
+                if choice == "y":
+                    print("The big gate has opened. You go west.")
+                    player = 17
+                else:
+                    print("The red door remains closed.")
+        elif direction == "south":
+            print("There is a wall stopping you. Sounds like theres a room behind it.")
+        elif direction == "east":
+            print("You go east.")
+            player = 14
+        elif direction == "west":
+            print("You go west.")
+            player = 16
+        else:
+            print("Choose a direction.")
+
+    elif player == 16:
+        if direction == "north":
+            print("Theres a wall stopping you. Its the edge of the maze")
+            player = 12
+        elif direction == "south":
+            print("You go south.")
+            player = 9
+        elif direction == "east":
+            print("You go east.")
+            player = 15
+        elif direction == "west":
+            print("Theres a wall stopping you. Its the edge of the maze")
+        else:
+            print("Choose a direction.")
+else:
+    print("Congratulations! You have exited the maze. Now go home, you must be tired.")
